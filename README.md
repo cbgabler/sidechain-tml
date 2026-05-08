@@ -1,0 +1,1 @@
+Project to develop a Tiny ML model on a chip to sucessfully stop in progress sidechain attacks/remote code execution.
