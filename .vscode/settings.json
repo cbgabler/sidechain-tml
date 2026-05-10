@@ -1,0 +1,6 @@
+{
+  "python.defaultInterpreterPath": "/Users/carsongabler/.pyenv/versions/3.11.0/bin/python3",
+  "python.analysis.extraPaths": [
+    "/Users/carsongabler/.pyenv/versions/3.11.0/lib/python3.11/site-packages"
+  ]
+}
