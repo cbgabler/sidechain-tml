@@ -1,22 +1,21 @@
 #include <Arduino.h>
 
-#include <scripts/anomaly.h>
-#include <scripts/baseline.h>
-#include <scripts/memory.h>
+#include "scripts/anomaly.cpp"
+#include "scripts/baseline.cpp"
+#include "scripts/memory.cpp"
+
+RTC_DATA_ATTR int reset_count = 0; 
 
 void setup() {
     Serial.begin(115200);
 
-
+    reset_count++;
 }
 
 void loop() {
-    Serial.print("Time: ");
     uint32_t time = micros();
     baseline_task();
     uint32_t elapsed = micros() - time;
-
-    Serial.println(time);
 
     uint32_t heap = esp_get_free_heap_size();
     
