@@ -8,15 +8,15 @@ void setup() {
 }
 
 void loop() {
-    if (Serial.available() > 0){
+    if (Serial.available() > 0) {
         String command = Serial.readStringUntil('\n');
-        command = command.trim();
-    }
+        command.trim();
 
-    if (command.startsWith("BRIDGE")) {
-        int val = command(7).toInt;
-        Serial.println("Got BRIDGE for %c seconds", val)
-    } else {
-        Serial.println("Error: Unknown command");
+        if (command.startsWith("BRIDGE")) {
+            int seconds = command.substring(7).toInt();
+            Serial.printf("got BRIDGE for %d seconds\n", seconds);
+        } else {
+            Serial.println("ERR unknown command");
+        }
     }
 }
